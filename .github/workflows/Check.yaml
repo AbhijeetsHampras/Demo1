@@ -1,8 +1,8 @@
-name: Bye-world
+name: hello-world
 on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-        run: echo "Bye bye World!"
+        run: echo "I just want to check if I can!"
