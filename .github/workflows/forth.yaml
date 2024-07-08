@@ -17,3 +17,10 @@ jobs:
       - name: my secret username
         run: |
           echo "${{ secrets.USERNAME }}"
+  NewTest:
+    environment : Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: print production pass
+        run: |
+          echo "${{ secrets.Prod_password }}"
