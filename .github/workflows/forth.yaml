@@ -1,8 +1,10 @@
-name: hello-world
+name: secrets
 on: push
+
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "I just want to check if I can!"
+      - name: my new step
+        run: |
+          echo "${{ secrets.USERNAME }}"
