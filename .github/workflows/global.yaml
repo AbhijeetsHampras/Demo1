@@ -1,7 +1,12 @@
 name: learning new
-on: push
+on:
+  push:
+    branches:
+      - main  # Adjust this to match your branch name if different
+
 env:
-      USERNAME: Abhijeet  # Define environment variables here
+  USERNAME: Abhijeet  # Define environment variables here
+
 jobs:
   my-job:
     runs-on: ubuntu-latest
@@ -9,16 +14,17 @@ jobs:
       - name: my new step
         run: |
           echo "${{ env.USERNAME }}"
+      
       - name: stepup
-        env :
-         PASSWORD : 1234 
-        run : |
-         echo "${{ env.PASSWORD }}"
+        env:
+          PASSWORD: 1234
+        run: |
+          echo "${{ env.PASSWORD }}"
 
   Second-job:
-     needs : my-job
-     runs-on: ubuntu-latest
-     steps:
+    needs: my-job  # Waits for 'my-job' to complete
+    runs-on: ubuntu-latest
+    steps:
       - name: my second step
         run: |
           echo "${{ env.USERNAME }}"
