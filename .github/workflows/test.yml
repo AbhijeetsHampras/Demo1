@@ -1,8 +1,12 @@
-name: hello-world
+name: learning new
 on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
+    env:
+      USERNAME: Abhijeet  # Define environment variables here
+
     steps:
-      - name: my-step
-        run: echo "change new thing"
+      - name: my new step
+        run: |
+          echo "${{ env.USERNAME }}"
