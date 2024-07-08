@@ -1,6 +1,11 @@
-name: secrets
+name: learning new
+on:
+  push:
+    branches:
+      - main  # Adjust this to match your branch name if different
 
-on: push
+env:
+  USERNAME: Abhijeet  # Define environment variables here
 
 jobs:
   my-job:
@@ -8,5 +13,7 @@ jobs:
     steps:
       - name: my new step
         run: |
+          echo "${{ env.USERNAME }}"
+      - name: my secret username
+        run: |
           echo "${{ secrets.USERNAME }}"
-
